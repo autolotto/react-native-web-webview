@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   iframe: {
+    position: 'absolute',
     width: '100%',
     height: '100%',
     borderWidth: 0,
