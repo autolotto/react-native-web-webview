@@ -115,16 +115,13 @@ export default class extends Component {
       );
     }
 
-    const { title, source, onLoad, scrollEnabled } = this.props;
-    const styleObj = StyleSheet.flatten(this.props.style);
+    const { title, source, onLoad, scrollEnabled, style } = this.props;
     return createElement('iframe', {
       title,
       ref: this.setRef,
       src: !source.method ? source.uri : undefined,
       srcDoc: this.handleInjectedJavaScript(this.state.html || source.html),
-      width: styleObj && styleObj.width,
-      height: styleObj && styleObj.height,
-      style: [styles.iframe, scrollEnabled && styles.noScroll],
+      style: [style, styles.iframe, scrollEnabled && styles.noScroll],
       allowFullScreen: true,
       allowpaymentrequest: 'true',
       frameBorder: '0',
